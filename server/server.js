@@ -6,7 +6,7 @@ const dbConfig = require("./app/config/db.config");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8080"
+  origin: "https://lfamarket-api.herokuapp.com"
 };
 
 app.use(cors());
@@ -21,7 +21,7 @@ const db = require("./app/models");
 const Role = db.role;
 
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+  .connect(`mongodb+srv://arudovwen:arudovwen@cluster0.msdqh.mongodb.net/lfamarket`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -37,7 +37,7 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome Success" });
+  res.json({ message: "Welcome User" });
 });
 
 app.post('/send',(req,res)=>{

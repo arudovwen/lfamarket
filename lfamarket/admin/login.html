@@ -77,7 +77,7 @@
                     <hr>
                     
                 <p class="change_link">New to site?
-                  <a href="/LFAMAKET/register.html" class="to_register"> Create Account </a>
+                  <a href="/admin/register.html" class="to_register"> Create Account </a>
                 </p>
                
 
@@ -105,7 +105,7 @@
           password: loginForm.password.value,
         };
         axios
-          .post("http://localhost:8080/api/auth/signin", data)
+          .post("https://lfamarket-api.herokuapp.com/api/auth/signin", data)
           .then((res) => {
             if (res.status == 200) {
               const typeAdmin = {};

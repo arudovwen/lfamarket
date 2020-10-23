@@ -105,7 +105,7 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" onclick="logoout">
+            <a class="nav-link" onclick="logout()">
             
              <i class="fas fa-sign-out-alt    "></i>
               <span>Logout</span></a>
@@ -582,8 +582,9 @@
     document.getElementById('fullname').innerHTML =user.name
 
     function logout(){
+        console.log("logout -> logout")
         localStorage.removeItem('typeUser')
-        window.location.href="/lfamarket/login.html"
+        window.location.href="/login.html"
     }
   </script>
 

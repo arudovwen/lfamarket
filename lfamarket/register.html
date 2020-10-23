@@ -97,7 +97,7 @@
                 <div class="separator">
                   <p class="change_link">
                     Already a member ?
-                    <a href="#signin" class="to_register"> Log in </a>
+                    <a href="login.html" class="to_register"> Log in </a>
                   </p>
     
                   <div class="clearfix"></div>
@@ -132,9 +132,9 @@
           password: registerForm.password.value
         };
      
-             axios.post('http://localhost:8080/api/auth/signup',data).then(res=>{
+             axios.post('https://lfamarket-api.herokuapp.com/api/auth/signup',data).then(res=>{
                  if (res.status==201) {
-                    window.location.href = "/lfamarket/login.html";
+                    window.location.href = "/login.html";
                  }
              }).catch(err=>{
             console.log(err.response.data.message);
