@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Business Management System Login</title>
+    <script src="../assets/js/admin-auth.js"></script>
+    <!-- Bootstrap -->
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="../assets/vendor/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <!-- Animate.css -->
+    <link
+      href="https://colorlib.com/polygon/gentelella/css/animate.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Theme Style -->
+    <!-- <link href="build/css/custom.min.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="../assets/css/login.css" />
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="container">
+        <div class="row">
+          <div class="login_wrapper">
+            <div class="animate form login_form">
+              <section class="login_content">
+                <form  id="loginForm">
+                  <h1>Admin Login Form</h1>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      class="form-control"
+                      placeholder="Username"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      class="form-control"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div>
+                    <button
+                      class="btn btn-primary"
+                      type="submit"
+                      ui-sref="home"
+                    >
+                      Log in
+                    </button>
+                    <a class="reset_pass" href="#">Lost your password?</a>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="separator">
+                    <hr>
+                    
+                <p class="change_link">New to site?
+                  <a href="/LFAMAKET/register.html" class="to_register"> Create Account </a>
+                </p>
+               
+
+                    <div class="clearfix"></div>
+                    <br />
+
+                    <div>
+                      <h1><i class="fa fa-paw"></i>LFA MARKET</h1>
+                      <p>©2020 Financial services provider System</p>
+                    </div>
+                  </div>
+                </form>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      loginForm.onsubmit = async (e) => {
+        e.preventDefault();
+        var data = {
+          username: loginForm.username.value,
+          password: loginForm.password.value,
+        };
+        axios
+          .post("http://localhost:8080/api/auth/signin", data)
+          .then((res) => {
+            if (res.status == 200) {
+              const typeAdmin = {};
+              typeAdmin.access_token = res.data.accessToken;
+              typeAdmin.username = res.data.username;
+              typeAdmin.roles = JSON.stringify(res.data.roles);
+              typeAdmin.email = res.data.email;
+              typeAdmin.id = res.data.id;
+              typeAdmin.name = res.data.name;
+              localStorage.setItem("typeAdmin", JSON.stringify(typeAdmin));
+
+              window.location.href="/lfamarket/admin/home.html"
+            }
+          }).catch(err=>{
+            console.log(err.response.data.message);
+          });
+      };
+    </script>
+  </body>
+</html>

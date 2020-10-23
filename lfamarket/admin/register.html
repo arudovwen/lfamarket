@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- Bootstrap -->
+     <link
+     href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+     rel="stylesheet"
+   />
+   <!-- Font Awesome -->
+   <link
+     href="../assets/vendor/font-awesome/css/font-awesome.min.css"
+     rel="stylesheet"
+   />
+   <!-- Animate.css -->
+   <link
+     href="https://colorlib.com/polygon/gentelella/css/animate.min.css"
+     rel="stylesheet"
+   />
+
+   <!-- Custom Theme Style -->
+   <link href="../assets/css/register.css" rel="stylesheet" />
+ </head>
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+        <div id="register" class="animate form registration_form">
+            <section class="login_content">
+              <form id="registerForm">
+                <h1>Create Admin Account</h1>
+              
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="">First name</label>
+                      <input type="text" id="firstname" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="col">
+                        <label for="">Last name</label>
+                      <input type="text" id="lastname" class="form-control" placeholder="Last name">
+                    </div>
+                  </div>
+            
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="text"
+                  class="form-control"  name="" id="email" aria-describedby="helpId" placeholder="example@email.com">
+              
+              </div>
+              <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="">Username</label>
+                      <input type="text" id="username" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="col">
+                        <label for="">Phone number</label>
+                      <input type="text" id="phonenumber" class="form-control" placeholder="Phone number">
+                    </div>
+                  </div>
+              
+              </div>
+            
+             
+              <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="">Password</label>
+                      <input type="text" id="password" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="col">
+                        <label for="">Confirm password</label>
+                      <input type="text" id="confirmpassword" class="form-control" placeholder="Last name">
+                    </div>
+                  </div>
+              
+              </div>
+           
+
+           
+
+             <div class="form-group">
+                 <button class="btn btn-primary" type="submit">Register</button>
+             </div>
+
+                <div class="clearfix"></div>
+    
+                <div class="separator">
+                
+                  <div class="clearfix"></div>
+                  <br />
+    
+                  <div>
+                    <h1><i class="fa fa-paw"></i> LFA MARKET</h1>
+                    <p>©2020 Financial services provider System</p>
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+    
+       </div>
+   </div>
+
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script>
+      registerForm.onsubmit = async (e) => {
+            var password = registerForm.password.value
+            var confirm_password = registerForm.confirmpassword.value
+          e.preventDefault();
+          if (password == confirm_password) {
+            var data = {
+            firstname: registerForm.firstname.value,
+            lastname: registerForm.lastname.value,
+            phonenumber: registerForm.phonenumber.value,
+            email: registerForm.email.value,
+            referral: null,
+          username: registerForm.username.value,
+          password: registerForm.password.value,
+          roles:['user','moderator','admin']
+        };
+     
+             axios.post('http://localhost:8080/api/auth/signup',data).then(res=>{
+                 if (res.status==201) {
+                    window.location.href = "/lfamarket/login.html";
+                 }
+             }).catch(err=>{
+            console.log(err.response.data.message);
+          });
+        
+          return false;
+          }else{
+              console.log('Passwords must match !'); 
+          }
+        
+        }
+      </script>
+</body>
+</html>

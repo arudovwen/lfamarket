@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard</title>
+  <title>Admin Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
 
   <!-- Custom styles for this template-->
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/admin-auth.js"></script>
 </head>
 
 <body id="page-top">
@@ -472,14 +472,14 @@
 
 
   <script>
-    var user = JSON.parse(localStorage.getItem("typeUser"));
-    console.log("user", user)
+    var user = JSON.parse(localStorage.getItem("typeAdmin"));
+   
     document.getElementById('username').innerHTML = `Hi ${user.username}`
     document.getElementById('fullname').innerHTML =user.name
 
     function logout(){
-        localStorage.removeItem('typeUser')
-        window.location.href="/lfamarket/login.html"
+        localStorage.removeItem('typeAdmin')
+        window.location.href="/lfamarket/admin/login.html"
     }
   </script>
 
