@@ -1,3 +1,4 @@
+
 function checkAuth() {
   var user = JSON.parse(localStorage.getItem("typeUser"));
 
@@ -9,6 +10,10 @@ function checkAuth() {
     window.location.href = "/dashboard/home.html";
   }
 }
-
+function logout(){
+  
+  localStorage.removeItem('typeUser')
+  window.location.href="/login.html"
+}
   checkAuth();
 

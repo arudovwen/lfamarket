@@ -2,11 +2,13 @@ const config = require("../config/auth.config");
 const db = require("../models");
 const User = db.user;
 const Role = db.role;
+const Referral = db.referral;
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
+  
   const user = new User({
     firstname: req.body.firstname.toLowerCase(),
     lastname: req.body.lastname.toLowerCase(),
@@ -14,8 +16,48 @@ exports.signup = (req, res) => {
     referral: req.body.referral,
     username: req.body.username.toLowerCase(),
     email: req.body.email.toLowerCase(),
-    password: bcrypt.hashSync(req.body.password, 8)
+    password: bcrypt.hashSync(req.body.password, 8),
   });
+
+  
+
+  if (req.body.referral) {
+   
+    Referral.findOne({username:req.body.referral.toLowerCase()}).exec((err,data)=>{
+     if (err) {
+      res.status(500).send({ message: err });
+      return;
+     }else{
+       if (data) {
+         console.log('here');
+         var newval = data.referral.push(req.body.username)
+        
+         Referral.updateOne({username:req.body.referral.toLowerCase()},{referral:data.referral}).exec((err,val)=>{
+           if (err) {
+             
+           }
+         })
+       }else{
+          var arr = []
+          arr.push(req.body.username.toLowerCase())
+          const ref = new Referral({
+            username: req.body.referral.toLowerCase(),
+            referral:arr
+          })
+
+          ref.save((err,user)=>{
+            if (err) {
+              res.status(500).send({ message: err });
+            return;
+            }
+          })
+
+       }
+     }
+    })
+   
+   
+  }
 
   user.save((err, user) => {
     if (err) {
@@ -26,7 +68,7 @@ exports.signup = (req, res) => {
     if (req.body.roles) {
       Role.find(
         {
-          name: { $in: req.body.roles }
+          name: { $in: req.body.roles },
         },
         (err, roles) => {
           if (err) {
@@ -34,8 +76,8 @@ exports.signup = (req, res) => {
             return;
           }
 
-          user.roles = roles.map(role => role._id);
-          user.save(err => {
+          user.roles = roles.map((role) => role._id);
+          user.save((err) => {
             if (err) {
               res.status(500).send({ message: err });
               return;
@@ -53,22 +95,26 @@ exports.signup = (req, res) => {
         }
 
         user.roles = [role._id];
-        user.save(err => {
+        user.save((err) => {
           if (err) {
             res.status(500).send({ message: err });
             return;
           }
 
-          res.status(201).send({ message: "User was registered successfully!" });
+          res
+            .status(201)
+            .send({ message: "User was registered successfully!" });
         });
       });
     }
   });
+
+
 };
 
 exports.signin = (req, res) => {
   User.findOne({
-    username: req.body.username.toLowerCase()
+    username: req.body.username.toLowerCase(),
   })
     .populate("roles", "-__v")
     .exec((err, user) => {
@@ -89,12 +135,12 @@ exports.signin = (req, res) => {
       if (!passwordIsValid) {
         return res.status(401).send({
           accessToken: null,
-          message: "Invalid Password!"
+          message: "Invalid Password!",
         });
       }
 
       var token = jwt.sign({ id: user.id }, config.secret, {
-        expiresIn: 86400 // 24 hours
+        expiresIn: 86400, // 24 hours
       });
 
       var authorities = [];
@@ -108,7 +154,16 @@ exports.signin = (req, res) => {
         email: user.email,
         roles: authorities,
         accessToken: token,
-        name: `${user.firstname} ${user.lastname}`
+        name: `${user.firstname} ${user.lastname}`,
       });
     });
+};
+
+exports.getUserinfo = (req, res) => {
+  var id = req.params.id;
+  
+  User.findOne({ _id: id }).exec((err,user)=>{
+  res.status(200).send(user)
+    
+  });
 };

@@ -33,6 +33,12 @@
                 <h1>Create Account</h1>
               
             <div class="form-group">
+              <div class="alert  alert-dismissible fade " id="alert" role="alert">
+               <div id="message"></div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
                 <div class="row">
                     <div class="col">
                         <label for="">First name</label>
@@ -70,11 +76,11 @@
                 <div class="row">
                     <div class="col">
                         <label for="">Password</label>
-                      <input type="text" id="password" class="form-control" placeholder="First name">
+                      <input type="password" id="password" class="form-control" placeholder="*******">
                     </div>
                     <div class="col">
                         <label for="">Confirm password</label>
-                      <input type="text" id="confirmpassword" class="form-control" placeholder="Last name">
+                      <input type="password" id="confirmpassword" class="form-control" placeholder="*******">
                     </div>
                   </div>
               
@@ -121,7 +127,7 @@
             var password = registerForm.password.value
             var confirm_password = registerForm.confirmpassword.value
           e.preventDefault();
-          if (password == confirm_password) {
+          if (password == confirm_password && password.length) {
             var data = {
             firstname: registerForm.firstname.value,
             lastname: registerForm.lastname.value,
@@ -132,17 +138,28 @@
           password: registerForm.password.value
         };
      
-             axios.post('https://lfamarket-api.herokuapp.com/api/auth/signup',data).then(res=>{
+             axios.post('http://localhost:8080/api/auth/signup',data).then(res=>{
                  if (res.status==201) {
                     window.location.href = "/login.html";
                  }
              }).catch(err=>{
             console.log(err.response.data.message);
+            document.getElementById('message').innerText = err.response.data.message
+            document.getElementById('alert').classList.add('alert-danger','show')
+            setTimeout(()=>{
+              document.getElementById('message').innerText =''
+              document.getElementById('alert').classList.remove('alert-danger','show')
+            },2000)
           });
         
           return false;
           }else{
-              console.log('Passwords must match !'); 
+            document.getElementById('message').innerText = 'Passwords must match !'
+            document.getElementById('alert').classList.add('alert-danger','show')
+            setTimeout(()=>{
+              document.getElementById('message').innerText =''
+              document.getElementById('alert').classList.remove('alert-danger','show')
+            },2000)
           }
         
         }
