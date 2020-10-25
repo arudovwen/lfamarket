@@ -1654,3 +1654,16 @@ section {
   font-size: 13px;
   color: #ddd;
 }
+
+.referral-table{
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.referral{
+ padding: 10px;
+ border-bottom: 1px solid #ccc;
+ text-transform: capitalize;
+}
+.referral:last-child{
+  border-bottom: none;
+}

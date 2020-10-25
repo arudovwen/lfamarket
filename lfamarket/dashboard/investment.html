@@ -52,117 +52,104 @@
   <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
-      <!-- Sidebar -->
-      <ul
-        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-        id="accordionSidebar"
-      >
+       <!-- Sidebar -->
+       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
         <!-- Sidebar - Brand -->
-        <a
-          class="sidebar-brand d-flex align-items-center justify-content-center"
-          href="index.html"
-        >
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
           <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
           </div>
           <div class="sidebar-brand-text mx-3" id="username">Username</div>
         </a>
-
+  
         <!-- Divider -->
-        <hr class="sidebar-divider my-0" />
-
+        <hr class="sidebar-divider my-0">
+  
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="home.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a
-          >
+            <span>Dashboard</span></a>
         </li>
-
+  
         <li class="nav-item active">
           <a class="nav-link" href="profile.html">
-            <i class="fa fa-user-circle" aria-hidden="true"></i>
-            <span>My Profile</span></a
-          >
+           <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <span>My Profile</span></a>
         </li>
-
+  
         <!-- Divider -->
-        <hr class="sidebar-divider" />
+        <hr class="sidebar-divider">
         <li class="nav-item active">
           <a class="nav-link" href="plans.html">
-            <i class="fas fa-chart-line"></i>
-            <span>Investment plans</span></a
-          >
+        <i class="fas fa-chart-line    "></i>
+            <span>Investment plans</span></a>
         </li>
-
+   
         <li class="nav-item active">
           <a class="nav-link" href="investment.html">
-            <i class="fas fa-chart-line"></i>
-            <span>My Investment</span></a
-          >
+        <i class="fas fa-chart-line    "></i>
+            <span>My Investment</span></a>
         </li>
-
+  
         <li class="nav-item active">
           <a class="nav-link" href="payment.html">
-            <i class="fa fa-credit-card" aria-hidden="true"></i>
-            <span>Payments Option</span></a
-          >
+              <i class="fa fa-credit-card" aria-hidden="true"></i>
+            <span>Payments Option</span></a>
         </li>
-
+  
         <li class="nav-item active">
           <a class="nav-link" href="proof.html">
-            <i class="fa fa-user-circle" aria-hidden="true"></i>
-            <span>Proof of Payment</span></a
-          >
+           <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <span>Proof of Payment</span></a>
         </li>
-
+     
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="referral.html">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Referrals</span></a
-          >
+            <span>Referrals</span></a>
         </li>
-
+  
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
-            <span>Inbox</span></a
-          >
+            <span>Inbox</span></a>
         </li>
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Invoices</span></a
-          >
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>My Balance</span></a
-          >
-        </li>
-
+          <!-- Nav Item - Tables -->
+          <li class="nav-item">
+              <a class="nav-link" href="invoice.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Invoices</span></a>
+            </li>
+  
+           <!-- Nav Item - Tables -->
+           <li class="nav-item">
+              <a class="nav-link" href="balance.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>My Balance</span></a>
+            </li>
+      
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block" />
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" onclick="logout()">
-            <i class="fas fa-sign-out-alt"></i>
-            <span>Logout</span></a
-          >
-        </li>
+        <hr class="sidebar-divider d-none d-md-block">
+  
+          <!-- Nav Item - Tables -->
+          <li class="nav-item">
+              <a class="nav-link" onclick="logout()">
+              
+               <i class="fas fa-sign-out-alt    "></i>
+                <span>Logout</span></a>
+            </li>
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
+  
       </ul>
       <!-- End of Sidebar -->
+  
 
       <!-- Content Wrapper -->
       <div id="content-wrapper" class="d-flex flex-column">
@@ -673,7 +660,7 @@
          var data = {
            username : user.username
          }
-         axios.post('http://localhost:8080/api/make-payment',data).then(res=>{
+         axios.post('https://lfamarket-api.herokuapp.com/api/make-payment',data).then(res=>{
               if (res.status == 201) {
                 window.location.href = "./payment.html"
               }
@@ -684,7 +671,7 @@
         var data = {
           username:user.username
         }
-        axios.post(`http://localhost:8080/api/get-investment`,data).then(res=>{
+        axios.post(`https://lfamarket-api.herokuapp.com/api/get-investment`,data).then(res=>{
           
        switch (res.data.plan) {
          case 'one':

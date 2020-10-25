@@ -18,6 +18,38 @@
   <!-- Custom styles for this template-->
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
   <script src="../assets/js/auth.js"></script>
+  <style>
+    .mybal{
+      padding:20px;
+      background-color: white;
+      min-width: 180px;
+      height: 180px;
+      border-radius: 50rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid yellow;
+      position: relative;
+    
+    }
+    .mybal:first-child::after{
+      content: '';
+      position: absolute;
+      border-top: 5px solid;
+      width: 99%;
+      right: -100%;
+     
+    }
+    .mybal:nth-child(2)::after{
+      content: '';
+      position: absolute;
+      border-top: 5px solid;
+      width: 99%;
+      right: -100%;
+     
+    }
+  </style>
 </head>
 
 <body id="page-top">
@@ -41,7 +73,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="home.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -313,8 +345,31 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div class="container-fluid h-75">
+          <h2>My Balance</h2>
 
+          <div class="d-flex justify-content-center align-items-center h-100 w-100 p-4">
+             <div class="w-75">
+              <div class="d-flex justify-content-between w-100 mb-5">
+                <div class="text-center mybal shadow-sm">
+                  <p class="font-weight-bold text-gray-500"> Day 1</p>
+                  <div class="h5 font-weight-bold" >R0.00</div>
+                 </div>
+                <div class="text-center mybal shadow-sm">
+                  <p class="font-weight-bold text-gray-500"> Day 15</p>
+                  <div class="h5 font-weight-bold">R5000.00</div>
+                </div>
+                <div class="text-center mybal shadow-sm">
+                  <p class="font-weight-bold text-gray-500"> Day 30</p>
+                  <div class="h5 font-weight-bold">R20000.00</div>
+                </div>
+               </div>
+
+               <div class="text-center p-4">
+                <button type="button" class="btn btn-primary">Withdraw</button>
+               </div>
+             </div>
+          </div>
         </div>
         <!-- /.container-fluid -->
 
@@ -345,7 +400,9 @@
 
   <script>
     var user = JSON.parse(localStorage.getItem("typeUser"));
-    
+    document.getElementById('username').innerHTML = `Hi ${user.username}`
+    document.getElementById('fullname').innerHTML =user.name
+
    
   </script>
 

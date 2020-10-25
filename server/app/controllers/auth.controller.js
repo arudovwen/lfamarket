@@ -21,44 +21,6 @@ exports.signup = (req, res) => {
 
   
 
-  if (req.body.referral) {
-   
-    Referral.findOne({username:req.body.referral.toLowerCase()}).exec((err,data)=>{
-     if (err) {
-      res.status(500).send({ message: err });
-      return;
-     }else{
-       if (data) {
-         console.log('here');
-         var newval = data.referral.push(req.body.username)
-        
-         Referral.updateOne({username:req.body.referral.toLowerCase()},{referral:data.referral}).exec((err,val)=>{
-           if (err) {
-             
-           }
-         })
-       }else{
-          var arr = []
-          arr.push(req.body.username.toLowerCase())
-          const ref = new Referral({
-            username: req.body.referral.toLowerCase(),
-            referral:arr
-          })
-
-          ref.save((err,user)=>{
-            if (err) {
-              res.status(500).send({ message: err });
-            return;
-            }
-          })
-
-       }
-     }
-    })
-   
-   
-  }
-
   user.save((err, user) => {
     if (err) {
       res.status(500).send({ message: err });

@@ -15,4 +15,5 @@ module.exports = function(app){
        app.post('/api/get-investments', controller.getInvestments);
        app.post('/api/get-investment', controller.getInvestment);
        app.post('/api/save-proof', controller.saveProof);
+       app.get('/api/get-referrals/:username', controller.getReferrals);
 }

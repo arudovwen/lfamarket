@@ -1,378 +1,862 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-<head>
+    <title>Profile</title>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <!-- Custom fonts for this template-->
+    <link
+      href="../assets/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
 
-  <title>Profile</title>
+    <!-- Custom styles for this template-->
+    <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/profile.css" />
+    <script src="../assets/js/auth.js"></script>
+  </head>
 
-  <!-- Custom fonts for this template-->
-  <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul
+        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        id="accordionSidebar"
+      >
+        <!-- Sidebar - Brand -->
+        <a
+          class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="index.html"
+        >
+          <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+          </div>
+          <div class="sidebar-brand-text mx-3">Username</div>
+        </a>
 
-  <!-- Custom styles for this template-->
-  <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-  <script src="../assets/js/auth.js"></script>
-</head>
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0" />
 
-<body id="page-top">
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+          <a class="nav-link" href="home.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a
+          >
+        </li>
 
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+        <li class="nav-item active">
+          <a class="nav-link" href="profile.html">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <span>My Profile</span></a
+          >
+        </li>
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+        <li class="nav-item active">
+          <a class="nav-link" href="plans.html">
+            <i class="fas fa-chart-line"></i>
+            <span>Investment plans</span></a
+          >
+        </li>
 
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3" id="username">Username</div>
-      </a>
+        <li class="nav-item active">
+          <a class="nav-link" href="investment.html">
+            <i class="fas fa-chart-line"></i>
+            <span>My Investment</span></a
+          >
+        </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="profile.html">
-         <i class="fa fa-user-circle" aria-hidden="true"></i>
-          <span>My Profile</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-      <li class="nav-item active">
-        <a class="nav-link" href="plans.html">
-      <i class="fas fa-chart-line    "></i>
-          <span>Investment plans</span></a>
-      </li>
- 
-      <li class="nav-item active">
-        <a class="nav-link" href="investment.html">
-      <i class="fas fa-chart-line    "></i>
-          <span>My Investment</span></a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="payments.html">
+        <li class="nav-item active">
+          <a class="nav-link" href="payment.html">
             <i class="fa fa-credit-card" aria-hidden="true"></i>
-          <span>Payments Option</span></a>
-      </li>
+            <span>Payments Option</span></a
+          >
+        </li>
 
-      <li class="nav-item active">
-        <a class="nav-link" href="proof.html">
-         <i class="fa fa-user-circle" aria-hidden="true"></i>
-          <span>Proof of Payment</span></a>
-      </li>
-   
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Referrals</span></a>
-      </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="proof.html">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <span>Proof of Payment</span></a
+          >
+        </li>
 
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Inbox</span></a>
-      </li>
-        <!-- Nav Item - Tables -->
+        <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-              <i class="fas fa-fw fa-table"></i>
-              <span>Invoices</span></a>
-          </li>
-
-         <!-- Nav Item - Tables -->
-         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-              <i class="fas fa-fw fa-table"></i>
-              <span>My Balance</span></a>
-          </li>
-    
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+          <a class="nav-link" href="referral.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Referrals</span></a
+          >
+        </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" onclick="logout()">
-            
-             <i class="fas fa-sign-out-alt    "></i>
-              <span>Logout</span></a>
-          </li>
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+          <a class="nav-link" href="tables.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Inbox</span></a
+          >
+        </li>
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+          <a class="nav-link" href="invoice.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Invoices</span></a
+          >
+        </li>
 
-    </ul>
-    <!-- End of Sidebar -->
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+          <a class="nav-link" href="balance.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>My Balance</span></a
+          >
+        </li>
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
 
-      <!-- Main Content -->
-      <div id="content">
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+          <a class="nav-link" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span></a
+          >
+        </li>
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -->
 
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav
+            class="navbar navbar-expand navbar-light bg-white topbar mb-0 static-top shadow"
+          >
+            <!-- Sidebar Toggle (Topbar) -->
+            <button
+              id="sidebarToggleTop"
+              class="btn btn-link d-md-none rounded-circle mr-3"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
 
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+              <li class="nav-item dropdown no-arrow d-sm-none">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="searchDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-search fa-fw"></i>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div
+                  class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                  aria-labelledby="searchDropdown"
+                >
+                  <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control bg-light border-0 small"
+                        placeholder="Search for..."
+                        aria-label="Search"
+                        aria-describedby="basic-addon2"
+                      />
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+              <!-- Nav Item - Alerts -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="alertsDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell fa-fw"></i>
+                  <!-- Counter - Alerts -->
+                  <span class="badge badge-danger badge-counter">3+</span>
+                </a>
+                <!-- Dropdown - Alerts -->
+                <div
+                  class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="alertsDropdown"
+                >
+                  <h6 class="dropdown-header">Alerts Center</h6>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-file-alt text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 12, 2019</div>
+                      <span class="font-weight-bold"
+                        >A new monthly report is ready to download!</span
+                      >
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-success">
+                        <i class="fas fa-donate text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 7, 2019</div>
+                      $290.29 has been deposited into your account!
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-warning">
+                        <i class="fas fa-exclamation-triangle text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 2, 2019</div>
+                      Spending Alert: We've noticed unusually high spending for
+                      your account.
+                    </div>
+                  </a>
+                  <a
+                    class="dropdown-item text-center small text-gray-500"
+                    href="#"
+                    >Show All Alerts</a
+                  >
+                </div>
+              </li>
 
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
+              <!-- Nav Item - Messages -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="messagesDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-envelope fa-fw"></i>
+                  <!-- Counter - Messages -->
+                  <span class="badge badge-danger badge-counter">7</span>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div
+                  class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="messagesDropdown"
+                >
+                  <h6 class="dropdown-header">Message Center</h6>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                      <img
+                        class="rounded-circle"
+                        src="https://source.unsplash.com/fn_BT9fwg_E/60x60"
+                        alt=""
+                      />
+                      <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div class="font-weight-bold">
+                      <div class="text-truncate">
+                        Hi there! I am wondering if you can help me with a
+                        problem I've been having.
+                      </div>
+                      <div class="small text-gray-500">Emily Fowler · 58m</div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                      <img
+                        class="rounded-circle"
+                        src="https://source.unsplash.com/AU4VPcFN4LE/60x60"
+                        alt=""
+                      />
+                      <div class="status-indicator"></div>
+                    </div>
+                    <div>
+                      <div class="text-truncate">
+                        I have the photos that you ordered last month, how would
+                        you like them sent to you?
+                      </div>
+                      <div class="small text-gray-500">Jae Chun · 1d</div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                      <img
+                        class="rounded-circle"
+                        src="https://source.unsplash.com/CS2uCrpNzJY/60x60"
+                        alt=""
+                      />
+                      <div class="status-indicator bg-warning"></div>
+                    </div>
+                    <div>
+                      <div class="text-truncate">
+                        Last month's report looks great, I am very happy with
+                        the progress so far, keep up the good work!
+                      </div>
+                      <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                      <img
+                        class="rounded-circle"
+                        src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                        alt=""
+                      />
+                      <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div>
+                      <div class="text-truncate">
+                        Am I a good boy? The reason I ask is because someone
+                        told me that people say this to all dogs, even if they
+                        aren't good...
+                      </div>
+                      <div class="small text-gray-500">
+                        Chicken the Dog · 2w
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    class="dropdown-item text-center small text-gray-500"
+                    href="#"
+                    >Read More Messages</a
+                  >
+                </div>
+              </li>
 
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
+              <div class="topbar-divider d-none d-sm-block"></div>
+
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="userDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span
+                    class="mr-2 d-none d-lg-inline text-gray-600 small"
+                    class="fullname"
+                    style="text-transform: capitalize"
+                    >Valerie Luna</span
+                  >
+                  <img
+                    class="img-profile rounded-circle"
+                    src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+                  />
+                </a>
+                <!-- Dropdown - User Information -->
+                <div
+                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="userDropdown"
+                >
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" onclick="logout()">
+                    <i
+                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+                    ></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="main-content">
+            <!-- Top navbar -->
+            <nav
+              class="navbar navbar-top navbar-expand-md navbar-dark"
+              id="navbar-main"
+            >
+              <div class="container-fluid">
+                <!-- Brand -->
+                <a
+                  class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
+                  href="https://www.creative-tim.com/product/argon-dashboard"
+                  target="_blank"
+                  >User profile</a
+                >
+                <!-- Form -->
+                <form
+                  class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto"
+                >
+                  <div class="form-group mb-0">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"
+                          ><i class="fas fa-search"></i
+                        ></span>
+                      </div>
+                      <input
+                        class="form-control"
+                        placeholder="Search"
+                        type="text"
+                      />
                     </div>
                   </div>
                 </form>
+                <!-- User -->
+                <ul class="navbar-nav align-items-center d-none d-md-flex">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link pr-0"
+                      href="#"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <div class="media align-items-center">
+                        <span class="avatar avatar-sm rounded-circle">
+                          <img
+                            alt="Image placeholder"
+                            src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4.jpg"
+                          />
+                        </span>
+                        <div class="media-body ml-2 d-none d-lg-block">
+                          <div
+                            class="mb-0 text-sm font-weight-bold fullname"
+                          style="text-transform:capitalize"
+                          >
+                            Jessica Jones
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <div
+                      class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
+                    >
+                      <div class="dropdown-header noti-title">
+                        <h6 class="text-overflow m-0">Welcome!</h6>
+                      </div>
+                      <a href="../examples/profile.html" class="dropdown-item">
+                        <i class="ni ni-single-02"></i>
+                        <span>My profile</span>
+                      </a>
+                      <a href="../examples/profile.html" class="dropdown-item">
+                        <i class="ni ni-settings-gear-65"></i>
+                        <span>Settings</span>
+                      </a>
+                      <a href="../examples/profile.html" class="dropdown-item">
+                        <i class="ni ni-calendar-grid-58"></i>
+                        <span>Activity</span>
+                      </a>
+                      <a href="../examples/profile.html" class="dropdown-item">
+                        <i class="ni ni-support-16"></i>
+                        <span>Support</span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a href="#!" class="dropdown-item">
+                        <i class="ni ni-user-run"></i>
+                        <span>Logout</span>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
               </div>
-            </li>
-
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
+            </nav>
+            <!-- Header -->
+            <div
+              class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+              style="
+                min-height: 600px;
+                background-image: url(https://raw.githack.com/creativetimofficial/argon-dashboard/master/assets/img/theme/profile-cover.jpg);
+                background-size: cover;
+                background-position: center top;
+              "
+            >
+              <!-- Mask -->
+              <span class="mask bg-gradient-default opacity-8"></span>
+              <!-- Header container -->
+              <div class="container-fluid d-flex align-items-center">
+                <div class="row">
+                  <div class="col-lg-7 col-md-10">
+                    <h1
+                      class="display-2 text-white"
+                      style="text-transform: capitalize"
+                      id="username"
+                    ></h1>
+                    <p class="text-white mt-0 mb-5">
+                      This is your profile page. You can see the progress you've
+                      made with your work and manage your projects or assigned
+                      tasks
+                    </p>
+                    <a href="#!" class="btn btn-info">Edit profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Page content -->
+            <div class="container-fluid mt--7">
+              <div class="row">
+                <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+                  <div class="card card-profile shadow">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-3 order-lg-2">
+                        <div class="card-profile-image">
+                          <a href="#">
+                            <img
+                              src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4.jpg"
+                              class="rounded-circle"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4"
+                    >
+                      <div class="d-flex justify-content-between">
+                        <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
+                        <a href="#" class="btn btn-sm btn-default float-right"
+                          >Message</a
+                        >
+                      </div>
+                    </div>
+                    <div class="card-body pt-0 pt-md-4">
+                      <div class="row">
+                        <div class="col">
+                          <div
+                            class="card-profile-stats d-flex justify-content-center mt-md-5"
+                          >
+                            <div>
+                              <span class="heading">22</span>
+                              <span class="description">Friends</span>
+                            </div>
+                            <div>
+                              <span class="heading">10</span>
+                              <span class="description">Photos</span>
+                            </div>
+                            <div>
+                              <span class="heading">89</span>
+                              <span class="description">Comments</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <h3>
+                          <span class="fullname"   style="text-transform:capitalize">Jessica Jones</span
+                          ><span class="font-weight-light">, 27</span>
+                        </h3>
+                        <div class="h5 font-weight-300">
+                          <i class="ni location_pin mr-2"></i>Bucharest, Romania
+                        </div>
+                        <div class="h5 mt-4">
+                          <i class="ni business_briefcase-24 mr-2"></i>Solution
+                          Manager - Creative Tim Officer
+                        </div>
+                        <div>
+                          <i class="ni education_hat mr-2"></i>University of
+                          Computer Science
+                        </div>
+                        <hr class="my-4" />
+                        <p>
+                          Ryan — the name taken by Melbourne-raised,
+                          Brooklyn-based Nick Murphy — writes, performs and
+                          records all of his own music.
+                        </p>
+                        <a href="#">Show more</a>
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
+                </div>
+                <div class="col-xl-8 order-xl-1">
+                  <div class="card bg-secondary shadow">
+                    <div class="card-header bg-white border-0">
+                      <div class="row align-items-center">
+                        <div class="col-8">
+                          <h3 class="mb-0">My account</h3>
+                        </div>
+                        <div class="col-4 text-right">
+                          <a href="#!" class="btn btn-sm btn-primary"
+                            >Settings</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <form>
+                        <h6 class="heading-small text-muted mb-4">
+                          User information
+                        </h6>
+                        <div class="pl-lg-4">
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group focused">
+                                <label
+                                  class="form-control-label"
+                                  for="input-username"
+                                  >Username</label
+                                >
+                                <input
+                                  type="text"
+                                  id="input-username"
+                                  class="form-control form-control-alternative"
+                                  placeholder="Username"
+                                  value="lucky.jesse"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label
+                                  class="form-control-label"
+                                  for="input-email"
+                                  >Email address</label
+                                >
+                                <input
+                                  type="email"
+                                  id="input-email"
+                                  class="form-control form-control-alternative"
+                                  placeholder="jesse@example.com"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group focused">
+                                <label
+                                  class="form-control-label"
+                                  for="input-first-name"
+                                  >First name</label
+                                >
+                                <input
+                                  type="text"
+                                  id="input-first-name"
+                                  class="form-control form-control-alternative"
+                                  placeholder="First name"
+                                  value="Lucky"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="form-group focused">
+                                <label
+                                  class="form-control-label"
+                                  for="input-last-name"
+                                  >Last name</label
+                                >
+                                <input
+                                  type="text"
+                                  id="input-last-name"
+                                  class="form-control form-control-alternative"
+                                  placeholder="Last name"
+                                  value="Jesse"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="my-4" />
+                        <!-- Address -->
+                        <h6 class="heading-small text-muted mb-4">
+                          Contact information
+                        </h6>
+                        <div class="pl-lg-4">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group focused">
+                                <label
+                                  class="form-control-label"
+                                  for="input-address"
+                                  >Address</label
+                                >
+                                <input
+                                  id="input-address"
+                                  class="form-control form-control-alternative"
+                                  placeholder="Home Address"
+                                  value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <div class="form-group focused">
+                                <label
+                                  class="form-control-label"
+                                  for="input-city"
+                                  >City</label
+                                >
+                                <input
+                                  type="text"
+                                  id="input-city"
+                                  class="form-control form-control-alternative"
+                                  placeholder="City"
+                                  value="New York"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-lg-4">
+                              <div class="form-group focused">
+                                <label
+                                  class="form-control-label"
+                                  for="input-country"
+                                  >Country</label
+                                >
+                                <input
+                                  type="text"
+                                  id="input-country"
+                                  class="form-control form-control-alternative"
+                                  placeholder="Country"
+                                  value="United States"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label
+                                  class="form-control-label"
+                                  for="input-country"
+                                  >Postal code</label
+                                >
+                                <input
+                                  type="number"
+                                  id="input-postal-code"
+                                  class="form-control form-control-alternative"
+                                  placeholder="Postal code"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="my-4" />
+                        <!-- Description -->
+                        <h6 class="heading-small text-muted mb-4">About me</h6>
+                        <div class="pl-lg-4">
+                          <div class="form-group focused">
+                            <label>About Me</label>
+                            <textarea
+                              rows="4"
+                              class="form-control form-control-alternative"
+                              placeholder="A few words about you ..."
+                            >
+A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea
+                            >
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                </div>
               </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="fullname" style="text-transform: capitalize;">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" onclick="logout()">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-
-          </ul>
-
-        </nav>
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            &copy;  Copyright 2020 <strong> Lfamarkets</strong>. All Rights Reserved
+            </div>
           </div>
+          <!-- /.container-fluid -->
         </div>
-      </footer>
-      <!-- End of Footer -->
+        <!-- End of Main Content -->
 
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              &copy; Copyright 2020 <strong> Lfamarkets</strong>. All Rights
+              Reserved
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-        var user = JSON.parse(localStorage.getItem('typeUser'))
-         document.getElementById('username').innerHTML = `Hi ${user.username}`
-    document.getElementById('fullname').innerHTML =user.name
-    
-        axios.get(`http://localhost:8080/api/profile/${user.id}`).then(res=>{
-           
-        });
+      var user = JSON.parse(localStorage.getItem("typeUser"));
+
+      document.getElementById("username").innerHTML = `Hi ${user.username}`;
+
+      var fullname = document.querySelectorAll(".fullname");
+      console.log("fullname", fullname);
+
+      fullname.forEach((item) => {
+        item.innerHTML = user.name;
+        console.log("item.innerHTML", item.innerHTML);
+      });
+
+      getProfile();
+
+      function getProfile() {
+        axios
+          .get(`https://lfamarket-api.herokuapp.com/api/profile/${user.id}`)
+          .then((res) => {});
+      }
     </script>
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="../assets/js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <script src="../assets/vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="../assets/js/demo/chart-area-demo.js"></script>
-  <script src="../assets/js/demo/chart-pie-demo.js"></script>
-
-</body>
-
+    <!-- Custom scripts for all pages-->
+    <script src="../assets/js/sb-admin-2.min.js"></script>
+  </body>
 </html>
-
- 

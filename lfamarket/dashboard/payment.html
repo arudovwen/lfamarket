@@ -30,8 +30,8 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+     <!-- Sidebar -->
+     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -46,7 +46,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="home.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -77,9 +77,15 @@
           <span>Payments Option</span></a>
       </li>
 
+      <li class="nav-item active">
+        <a class="nav-link" href="proof.html">
+         <i class="fa fa-user-circle" aria-hidden="true"></i>
+          <span>Proof of Payment</span></a>
+      </li>
+   
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="referral.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Referrals</span></a>
       </li>
@@ -92,14 +98,14 @@
       </li>
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="invoice.html">
               <i class="fas fa-fw fa-table"></i>
               <span>Invoices</span></a>
           </li>
 
          <!-- Nav Item - Tables -->
          <li class="nav-item">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="balance.html">
               <i class="fas fa-fw fa-table"></i>
               <span>My Balance</span></a>
           </li>
@@ -483,7 +489,7 @@
         url:document.getElementById('url').innerText
       }
     
-      axios.post('http://localhost:8080/api/send-proof', data).then(res=>{
+      axios.post('https://lfamarket-api.herokuapp.com/api/send-proof', data).then(res=>{
         if (res.status==201) {
           saveProof()
           document.getElementById('message').innerText = ' Your message was sent !'
@@ -505,7 +511,7 @@
         username:user.username,
         url:document.getElementById('url').innerText
       }
-      axios.post('http://localhost:8080/api/save-proof',data)
+      axios.post('https://lfamarket-api.herokuapp.com/api/save-proof',data)
     }
     
     
