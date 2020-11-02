@@ -27,129 +27,138 @@
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet" />
     <script src="../assets/js/auth.js"></script>
     <style>
-      #one{
+      #one {
         display: none;
       }
-      #two{
+      #two {
         display: none;
       }
-      #eight{
+      #eight {
         display: none;
       }
-      #four{
+      #four {
         display: none;
       }
-      #twelve{
+      #twelve {
         display: none;
       }
-      #six{
+      #six {
         display: none;
       }
 
+      #myalert{
+        display: none;
+      }
+  
     </style>
   </head>
 
   <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
-       <!-- Sidebar -->
-       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
+      <!-- Sidebar -->
+      <ul
+        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        id="accordionSidebar"
+      >
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a
+          class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="index.html"
+        >
           <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
           </div>
           <div class="sidebar-brand-text mx-3" id="username">Username</div>
         </a>
-  
+
         <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-  
+        <hr class="sidebar-divider my-0" />
+
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
           <a class="nav-link" href="home.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Dashboard</span></a
+          >
         </li>
-  
+
         <li class="nav-item active">
           <a class="nav-link" href="profile.html">
-           <i class="fa fa-user-circle" aria-hidden="true"></i>
-            <span>My Profile</span></a>
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <span>My Profile</span></a
+          >
         </li>
-  
+
         <!-- Divider -->
-        <hr class="sidebar-divider">
+        <hr class="sidebar-divider" />
         <li class="nav-item active">
           <a class="nav-link" href="plans.html">
-        <i class="fas fa-chart-line    "></i>
-            <span>Investment plans</span></a>
+            <i class="fas fa-chart-line"></i>
+            <span>Investment plans</span></a
+          >
         </li>
-   
+
         <li class="nav-item active">
           <a class="nav-link" href="investment.html">
-        <i class="fas fa-chart-line    "></i>
-            <span>My Investment</span></a>
+            <i class="fas fa-chart-line"></i>
+            <span>My Investment</span></a
+          >
         </li>
-  
+
         <li class="nav-item active">
           <a class="nav-link" href="payment.html">
-              <i class="fa fa-credit-card" aria-hidden="true"></i>
-            <span>Payments Option</span></a>
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+            <span>Payments Option</span></a
+          >
         </li>
-  
-        <li class="nav-item active">
+
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="proof.html">
            <i class="fa fa-user-circle" aria-hidden="true"></i>
             <span>Proof of Payment</span></a>
         </li>
-     
+      -->
         <!-- Nav Item - Charts -->
         <li class="nav-item">
           <a class="nav-link" href="referral.html">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Referrals</span></a>
+            <span>Referrals</span></a
+          >
         </li>
-  
+
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="invoice.html">
             <i class="fas fa-fw fa-table"></i>
-            <span>Inbox</span></a>
+            <span>Invoices</span></a
+          >
         </li>
-          <!-- Nav Item - Tables -->
-          <li class="nav-item">
-              <a class="nav-link" href="invoice.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Invoices</span></a>
-            </li>
-  
-           <!-- Nav Item - Tables -->
-           <li class="nav-item">
-              <a class="nav-link" href="balance.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>My Balance</span></a>
-            </li>
-      
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+          <a class="nav-link" href="balance.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>My Balance</span></a
+          >
+        </li>
+
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-  
-          <!-- Nav Item - Tables -->
-          <li class="nav-item">
-              <a class="nav-link" onclick="logout()">
-              
-               <i class="fas fa-sign-out-alt    "></i>
-                <span>Logout</span></a>
-            </li>
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+          <a class="nav-link" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span></a
+          >
+        </li>
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-  
       </ul>
       <!-- End of Sidebar -->
-  
 
       <!-- Content Wrapper -->
       <div id="content-wrapper" class="d-flex flex-column">
@@ -226,173 +235,6 @@
                 </div>
               </li>
 
-              <!-- Nav Item - Alerts -->
-              <li class="nav-item dropdown no-arrow mx-1">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="alertsDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-bell fa-fw"></i>
-                  <!-- Counter - Alerts -->
-                  <span class="badge badge-danger badge-counter">3+</span>
-                </a>
-                <!-- Dropdown - Alerts -->
-                <div
-                  class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                  aria-labelledby="alertsDropdown"
-                >
-                  <h6 class="dropdown-header">Alerts Center</h6>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="mr-3">
-                      <div class="icon-circle bg-primary">
-                        <i class="fas fa-file-alt text-white"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="small text-gray-500">December 12, 2019</div>
-                      <span class="font-weight-bold"
-                        >A new monthly report is ready to download!</span
-                      >
-                    </div>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="mr-3">
-                      <div class="icon-circle bg-success">
-                        <i class="fas fa-donate text-white"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="small text-gray-500">December 7, 2019</div>
-                      $290.29 has been deposited into your account!
-                    </div>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="mr-3">
-                      <div class="icon-circle bg-warning">
-                        <i class="fas fa-exclamation-triangle text-white"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="small text-gray-500">December 2, 2019</div>
-                      Spending Alert: We've noticed unusually high spending for
-                      your account.
-                    </div>
-                  </a>
-                  <a
-                    class="dropdown-item text-center small text-gray-500"
-                    href="#"
-                    >Show All Alerts</a
-                  >
-                </div>
-              </li>
-
-              <!-- Nav Item - Messages -->
-              <li class="nav-item dropdown no-arrow mx-1">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="messagesDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-envelope fa-fw"></i>
-                  <!-- Counter - Messages -->
-                  <span class="badge badge-danger badge-counter">7</span>
-                </a>
-                <!-- Dropdown - Messages -->
-                <div
-                  class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                  aria-labelledby="messagesDropdown"
-                >
-                  <h6 class="dropdown-header">Message Center</h6>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="dropdown-list-image mr-3">
-                      <img
-                        class="rounded-circle"
-                        src="https://source.unsplash.com/fn_BT9fwg_E/60x60"
-                        alt=""
-                      />
-                      <div class="status-indicator bg-success"></div>
-                    </div>
-                    <div class="font-weight-bold">
-                      <div class="text-truncate">
-                        Hi there! I am wondering if you can help me with a
-                        problem I've been having.
-                      </div>
-                      <div class="small text-gray-500">Emily Fowler · 58m</div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="dropdown-list-image mr-3">
-                      <img
-                        class="rounded-circle"
-                        src="https://source.unsplash.com/AU4VPcFN4LE/60x60"
-                        alt=""
-                      />
-                      <div class="status-indicator"></div>
-                    </div>
-                    <div>
-                      <div class="text-truncate">
-                        I have the photos that you ordered last month, how would
-                        you like them sent to you?
-                      </div>
-                      <div class="small text-gray-500">Jae Chun · 1d</div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="dropdown-list-image mr-3">
-                      <img
-                        class="rounded-circle"
-                        src="https://source.unsplash.com/CS2uCrpNzJY/60x60"
-                        alt=""
-                      />
-                      <div class="status-indicator bg-warning"></div>
-                    </div>
-                    <div>
-                      <div class="text-truncate">
-                        Last month's report looks great, I am very happy with
-                        the progress so far, keep up the good work!
-                      </div>
-                      <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                    </div>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="dropdown-list-image mr-3">
-                      <img
-                        class="rounded-circle"
-                        src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                        alt=""
-                      />
-                      <div class="status-indicator bg-success"></div>
-                    </div>
-                    <div>
-                      <div class="text-truncate">
-                        Am I a good boy? The reason I ask is because someone
-                        told me that people say this to all dogs, even if they
-                        aren't good...
-                      </div>
-                      <div class="small text-gray-500">
-                        Chicken the Dog · 2w
-                      </div>
-                    </div>
-                  </a>
-                  <a
-                    class="dropdown-item text-center small text-gray-500"
-                    href="#"
-                    >Read More Messages</a
-                  >
-                </div>
-              </li>
-
-              <div class="topbar-divider d-none d-sm-block"></div>
-
               <!-- Nav Item - User Information -->
               <li class="nav-item dropdown no-arrow">
                 <a
@@ -447,6 +289,13 @@
 
           <!-- Begin Page Content -->
           <div class="container-fluid h-100">
+            <div class="alert alert-primary alert-dismissible fade show" id="myalert" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+              </button>
+              <strong>Hold on! </strong> You are already on an active plan.
+            </div>
             <div class="row w-100" style="height: 80%">
               <div class="w-100">
                 <h2 class="mb-4">My Investment Plan</h2>
@@ -481,7 +330,17 @@
                                 <td>Estimated Payout : +R8,800</td>
                               </tr>
                               <tr>
-                                <td><button type="button" name="" id="" class="btn btn-primary btn-sm btn-block" onclick="makePayment()">Click to Invest</button></td>
+                                <td>
+                                  <button
+                                    type="button"
+                                    name=""
+                                    id=""
+                                    class="btn btn-primary btn-sm btn-block"
+                                    onclick="getmyplan()"
+                                  >
+                                    Click to Invest
+                                  </button>
+                                </td>
                               </tr>
                             </tbody>
                           </table>
@@ -508,7 +367,17 @@
                                 <td>Estimated Payout : +R14,800</td>
                               </tr>
                               <tr>
-                                <td><button type="button" name="" id="" class="btn btn-primary btn-sm btn-block" onclick="makePayment()">Click to Invest</button></td>
+                                <td>
+                                  <button
+                                    type="button"
+                                    name=""
+                                    id=""
+                                    class="btn btn-primary btn-sm btn-block"
+                                    onclick="getmyplan()"
+                                  >
+                                    Click to Invest
+                                  </button>
+                                </td>
                               </tr>
                             </tbody>
                           </table>
@@ -534,7 +403,17 @@
                                 <td>Estimated Payout : + R37,800</td>
                               </tr>
                               <tr>
-                                <td><button type="button" name="" id="" class="btn btn-primary btn-sm btn-block" onclick="makePayment()">Click to Invest</button></td>
+                                <td>
+                                  <button
+                                    type="button"
+                                    name=""
+                                    id=""
+                                    class="btn btn-primary btn-sm btn-block"
+                                    onclick="getmyplan()"
+                                  >
+                                    Click to Invest
+                                  </button>
+                                </td>
                               </tr>
                             </tbody>
                           </table>
@@ -561,7 +440,17 @@
                                 <td>Estimated Payout : +R78,800</td>
                               </tr>
                               <tr>
-                                <td><button type="button" name="" id="" class="btn btn-primary btn-sm btn-block" onclick="makePayment()">Click to Invest</button></td>
+                                <td>
+                                  <button
+                                    type="button"
+                                    name=""
+                                    id=""
+                                    class="btn btn-primary btn-sm btn-block"
+                                    onclick="getmyplan()"
+                                  >
+                                    Click to Invest
+                                  </button>
+                                </td>
                               </tr>
                             </tbody>
                           </table>
@@ -587,7 +476,17 @@
                                 <td>Estimated Payout : + R123,800</td>
                               </tr>
                               <tr>
-                                <td><button type="button" name="" id="" class="btn btn-primary btn-sm btn-block" onclick="makePayment()">Click to Invest</button></td>
+                                <td>
+                                  <button
+                                    type="button"
+                                    name=""
+                                    id=""
+                                    class="btn btn-primary btn-sm btn-block"
+                                    onclick="getmyplan()"
+                                  >
+                                    Click to Invest
+                                  </button>
+                                </td>
                               </tr>
                             </tbody>
                           </table>
@@ -613,13 +512,26 @@
                                 <td>Estimated Payout : + R181,800</td>
                               </tr>
                               <tr>
-                                <td><button type="button" name="" id="" class="btn btn-primary btn-sm btn-block" onclick="makePayment()">Click to Invest</button></td>
+                                <td>
+                                  <button
+                                    type="button"
+                                    name=""
+                                    id=""
+                                    class="btn btn-primary btn-sm btn-block"
+                                    onclick="getmyplan()"
+                                  >
+                                    Click to Invest
+                                  </button>
+                                </td>
                               </tr>
                             </tbody>
-                          </table> 
-                      
-                      
-                          <div class="text-center"><a name="" id="" href="./plans.html" role="button">Choose a different plan</a></div>
+                          </table>
+
+                          <div class="text-center">
+                            <a name="" id="" href="./plans.html" role="button"
+                              >Choose a different plan</a
+                            >
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -636,7 +548,8 @@
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              &copy;  Copyright 2020 <strong> Lfamarkets</strong>. All Rights Reserved
+              &copy; Copyright 2020 <strong> Lfamarkets</strong>. All Rights
+              Reserved
             </div>
           </div>
         </footer>
@@ -653,58 +566,80 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       var user = JSON.parse(localStorage.getItem("typeUser"));
-      document.getElementById('username').innerHTML = `Hi ${user.username}`
-    document.getElementById('fullname').innerHTML =user.name
+      document.getElementById("username").innerHTML = `Hi ${user.username}`;
+      document.getElementById("fullname").innerHTML = user.name;
 
-       function makePayment(){
-         var data = {
-           username : user.username
-         }
-         axios.post('https://lfamarket-api.herokuapp.com/api/make-payment',data).then(res=>{
-              if (res.status == 201) {
-                window.location.href = "./payment.html"
-              }
-         })
-       }
+      function getmyplan() {
+       
+       axios
+         .get(`http://localhost:8080/api/getmyplan/${user.id}`)
+         .then((res) => {
+           if (res.status == 200) {
+           if(res.data.status =='active'){
+               console.log('You are already on an active plan')
+               myalert.style.display ='block'
+                setTimeout(()=>{
+                  myalert.style.display ='none'
+                },2000)
+           }else{
+
+            makePayment()
+           }
+           }
+         });
      
-      function getPlan(){
+     }
+      function makePayment() {
         var data = {
-          username:user.username
-        }
-        axios.post(`https://lfamarket-api.herokuapp.com/api/get-investment`,data).then(res=>{
-          
-       switch (res.data.plan) {
-         case 'one':
-           document.getElementById('one').style.display = "block"
-           break;
-       
-           case 'two':
-           document.getElementById('two').style.display = "block"
-           break;
-       
-           case 'eight':
-           document.getElementById('eight').style.display = "block"
-           break;
-       
-           case 'four':
-           document.getElementById('four').style.display = "block"
-           break;
-       
-           case 'twelve':
-           document.getElementById('twelve').style.display = "block"
-           break;
-       
-           case 'six':
-           document.getElementById('six').style.display = "block"
-           break;
-       
-
-         default:
-           break;
-       }
-        })
+          username: user.username,
+        };
+        axios
+          .post("http://localhost:8080/api/make-payment", data)
+          .then((res) => {
+            if (res.status == 201) {
+               window.location.href = "./payment.html";
+            }
+          });
       }
-      getPlan()
+
+      function getPlan() {
+        var data = {
+          username: user.username,
+        };
+        axios
+          .post(`http://localhost:8080/api/get-investment`, data)
+          .then((res) => {
+            switch (res.data.plan) {
+              case "one":
+                document.getElementById("one").style.display = "block";
+                break;
+
+              case "two":
+                document.getElementById("two").style.display = "block";
+                break;
+
+              case "eight":
+                document.getElementById("eight").style.display = "block";
+                break;
+
+              case "four":
+                document.getElementById("four").style.display = "block";
+                break;
+
+              case "twelve":
+                document.getElementById("twelve").style.display = "block";
+                break;
+
+              case "six":
+                document.getElementById("six").style.display = "block";
+                break;
+
+              default:
+                break;
+            }
+          });
+      }
+      getPlan();
     </script>
 
     <!-- Bootstrap core JavaScript-->
@@ -716,7 +651,5 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../assets/js/sb-admin-2.min.js"></script>
-
-
   </body>
 </html>

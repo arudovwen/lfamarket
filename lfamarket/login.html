@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Business Management System Login</title>
-    <script src="./assets/js/auth.js"></script>
+    <!-- <script src="./assets/js/auth.js"></script> -->
     <!-- Bootstrap -->
     <link
       href="./assets/vendor/bootstrap/css/bootstrap.min.css"
@@ -28,6 +28,11 @@
     <!-- Custom Theme Style -->
     <!-- <link href="build/css/custom.min.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./assets/css/login.css" />
+    <style>
+      #spinner{
+        display: none;
+      }
+    </style>
   </head>
 
   <body class="login">
@@ -62,11 +67,13 @@
                   </div>
                   <div>
                     <button
-                      class="btn btn-primary"
+                      class="btn btn-primary d-flex align-items-center"
                       type="submit"
                       ui-sref="home"
                     >
-                      Log in
+                     <span class="mr-2"> Log in</span>  <span class="spinner-grow  spinner-grow-sm" id="spinner" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </span>
                     </button>
                     <a class="reset_pass" href="#">Lost your password?</a>
                   </div>
@@ -99,7 +106,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       loginForm.onsubmit = async (e) => {
+      
         e.preventDefault();
+        spinner.style.display = "block"
         var data = {
           username: loginForm.username.value,
           password: loginForm.password.value,
@@ -115,12 +124,15 @@
               typeUser.email = res.data.email;
               typeUser.id = res.data.id;
               typeUser.name = res.data.name;
+              typeUser.firstname = res.data.firstname;
+              typeUser.lastname = res.data.lastname;
               localStorage.setItem("typeUser", JSON.stringify(typeUser));
 
              window.location.href="/dashboard/home.html"
             }
           }).catch(err=>{
             console.log(err.response.data.message);
+            spinner.style.display = "none"
           });
       };
     </script>

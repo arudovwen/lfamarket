@@ -22,6 +22,10 @@
      .card{
        min-height:270px;
      }
+
+     .pointer{
+       cursor:pointer
+     }
   </style>
 </head>
 
@@ -77,11 +81,11 @@
           <span>Payments Option</span></a>
       </li>
 
-      <li class="nav-item active">
+      <!-- <li class="nav-item active">
         <a class="nav-link" href="proof.html">
          <i class="fa fa-user-circle" aria-hidden="true"></i>
           <span>Proof of Payment</span></a>
-      </li>
+      </li> -->
    
       <!-- Nav Item - Charts -->
       <li class="nav-item">
@@ -90,12 +94,7 @@
           <span>Referrals</span></a>
       </li>
 
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Inbox</span></a>
-      </li>
+     
         <!-- Nav Item - Tables -->
         <li class="nav-item">
             <a class="nav-link" href="invoice.html">
@@ -177,111 +176,7 @@
               </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-
+        
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
@@ -322,7 +217,23 @@
           
           <h2>Payment Options</h2>
           <p>Choose one of the payment options below</p>
-          <div data-toggle="modal" data-target="#payment"> <i class="fa fa-info-circle" aria-hidden="true"></i> Click to provide proof of payment after making your payment </div>
+          <div class="mb-3"> 
+            <ul>
+              <li>  ❑ Per any investment package 10% of admin fee must be included. 
+               </li>
+               <li> ❑ After filling this document send it to <a href="mailto:admin@lfamarket.co.za">admin@lfamarket.co.za</a></li>
+              <li> ❑  Send proof of payment at <a href="mailto:payment@lfamarket.co.za">payment@lfamarket.co.za</a></li>
+              <li>❑ For more info you can send your messages to <a href="mailto:info@lfamarket.co.za">info@lfamarket.co.za</a></li>
+              <li>  ❖ NOTE : NO CONTRACT FORM WILL BE APPROVED WITHOUT PROOF OF PAYMENT</li>
+            </ul>
+            
+           
+           
+          </div>
+          <div class="mb-2 pointer"><i class="fas fa-angle-right" aria-hidden="true"></i> Ensure you sign and submit the contract document before proceeding to make your payment. <a download="" href="../assets/contract.pdf">Download here</a></div>
+          <div class="pointer" data-toggle="modal" data-target="#payment"> <i class="fas fa-angle-right" aria-hidden="true"></i> Click to provide proof of payment after making your payment </div>
+
+          
 
           <!-- Modal -->
 <div class="modal fade" id="payment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -381,7 +292,7 @@
     </div>
   </div>
 </div>
-            <div class="row h-100 justify-content-center align-items-center">
+            <div class="row mt-5 justify-content-center ">
              
 
                 <!-- Profile Card Example -->
@@ -489,10 +400,10 @@
         url:document.getElementById('url').innerText
       }
     
-      axios.post('https://lfamarket-api.herokuapp.com/api/send-proof', data).then(res=>{
+      axios.post('http://localhost:8080/api/send-proof', data).then(res=>{
         if (res.status==201) {
           saveProof()
-          document.getElementById('message').innerText = ' Your message was sent !'
+          document.getElementById('message').innerText = ' Your message was sent !, Awaiting verification'
           document.getElementById('alert').classList.add('show','alert-success')
           e.srcElement[0].value = '';
         e.srcElement[1].value = '';
@@ -511,7 +422,14 @@
         username:user.username,
         url:document.getElementById('url').innerText
       }
-      axios.post('https://lfamarket-api.herokuapp.com/api/save-proof',data)
+      axios.post('http://localhost:8080/api/save-proof',data).then(res=>{
+        if(res.status==201){
+          document.getElementById('url').innerText = ''
+          setTimeout(() => {
+            $('#payment').modal('hide')
+          }, 3000);
+        }
+      })
     }
     
     

@@ -9,7 +9,12 @@ const Proof = mongoose.model(
         plan:String,
         amount_paid: String,
         investment_id:String,
-        url:String
+        url:String,
+        verified:Boolean,
+        status:String,
+        startDate:String,
+        endDate:String,
+        earning:String
     }, 
     { timestamps: true })
 )

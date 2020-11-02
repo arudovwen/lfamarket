@@ -11,6 +11,7 @@ db.payment = require("./payment.model");
 db.investment = require("./investment.model");
 db.proof = require('./proof.model');
 db.referral = require('./referral.model');
+db.invoice = require('./invoice.model');
 
 
 db.ROLES = ["user", "admin", "moderator"];

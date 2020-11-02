@@ -22,4 +22,5 @@ module.exports = function(app) {
   app.post("/api/auth/signin", controller.signin);
 
   app.get('/api/profile/:id', controller.getUserinfo);
+  app.get('/api/users', controller.getUsers);
 };

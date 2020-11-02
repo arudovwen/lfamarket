@@ -16,4 +16,13 @@ module.exports = function(app){
        app.post('/api/get-investment', controller.getInvestment);
        app.post('/api/save-proof', controller.saveProof);
        app.get('/api/get-referrals/:username', controller.getReferrals);
+       app.get('/api/all-referrals', controller.allreferrals)
+       app.get('/api/all-investors', controller.allinvestments)
+       app.get('/api/all-payments',controller.getPayments)
+
+       app.get('/api/get-invoices/:username',controller.getInvoices)
+
+       app.get('/api/verify-payment/:id/:plan',controller.verifyproof)
+       app.get('/api/unverify-payment/:id/:plan',controller.unverifyproof)
+       app.get('/api/getmyplan/:id', controller.getmyplan)
 }

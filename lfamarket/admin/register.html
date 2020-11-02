@@ -126,7 +126,7 @@
      
              axios.post('https://lfamarket-api.herokuapp.com/api/auth/signup',data).then(res=>{
                  if (res.status==201) {
-                    window.location.href = "/lfamarket/login.html";
+                    window.location.href = "/login.html";
                  }
              }).catch(err=>{
             console.log(err.response.data.message);

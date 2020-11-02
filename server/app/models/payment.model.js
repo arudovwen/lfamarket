@@ -10,6 +10,8 @@ const Payment = mongoose.model(
       amount_paid: String,
       investment_id:String,
       verify: Boolean,
+      
+     
     },
     { timestamps: true }
   )

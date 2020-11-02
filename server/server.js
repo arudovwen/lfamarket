@@ -6,7 +6,7 @@ const mail = require("./mailer");
 const app = express();
 
 var corsOptions = {
-  origin: "https://lfamarket-api.herokuapp.com"
+  origin: "https://lfamarket-api.herokuapp.com",
 };
 
 app.use(cors());
@@ -20,26 +20,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./app/models");
 const Role = db.role;
 
-// db.mongoose
-//   .connect(`mongodb+srv://arudovwen:arudovwen@cluster0.msdqh.mongodb.net/lfamarket`, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   })
-  
-  db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+db.mongoose
+  .connect(`mongodb+srv://arudovwen:arudovwen@cluster0.msdqh.mongodb.net/lfamarket`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
+
+// db.mongoose
+//   .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Connection error", err);
     process.exit();
   });
-
 
 // simple route
 app.get("/", (req, res) => {
@@ -49,7 +48,7 @@ app.get("/", (req, res) => {
 // routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
-require("./app/routes/payment.routes")(app)
+require("./app/routes/payment.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
@@ -68,13 +67,48 @@ app.post("/api/send-proof", (req, res) => {
                 <p>Username: ${req.body.username}</p>
                 <p> Name: ${req.body.name}</p>
                 <p>Payment proof: ${req.body.url}</p>`;
-           
-                var mailOptions = {
-                  from: `${req.body.name} <${req.body.email}>`,
-                  to: "successahon@gmail.com",
-                  subject: 'Payment Proof',
-                  html: htmlContent,
-                };
+
+  var mailOptions = {
+    from: `${req.body.name} <${req.body.email}>`,
+    to: "payment@lfamarket.co.zam",
+    subject: "Payment Proof",
+    html: htmlContent,
+  };
+
+  mail.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      res.status(201).send(info.response);
+      console.log("Email sent: " + info.response);
+    }
+  });
+
+  res.status(201).send('okay');
+});
+
+
+
+
+
+
+app.post("/api/send-document", (req, res) => {
+  let htmlContent = `
+              
+                <p>Hi,</p>
+                <p>${req.body.name} contacted with the following Details</p>
+                <br/>
+                <p>Email: ${req.body.email}</p>
+                <p>Username: ${req.body.username}</p>
+                <p> Name: ${req.body.name}</p>
+                <p>Document: ${req.body.url}</p>`;
+
+  var mailOptions = {
+    from: `${req.body.name} <${req.body.email}>`,
+    to: "admin@lfamarket.co.za",
+    subject: "Contract Form",
+    html: htmlContent,
+  };
 
   mail.sendMail(mailOptions, function (error, info) {
     if (error) {
@@ -86,12 +120,42 @@ app.post("/api/send-proof", (req, res) => {
   });
 });
 
+
+
+
+app.post("/api/send-mail", (req, res) => {
+  let htmlContent = `
+              
+                <p>Hi,</p>
+                <p>${req.body.name} contacted with the following Details</p>
+                <p>Email: ${req.body.email}</p>
+                <p> Name: ${req.body.name}</p>
+                <p>Message: ${req.body.message}</p>`;
+
+  var mailOptions = {
+    from: `<${req.body.email}>`,
+    to: "info@lfamarket.co.za",
+    subject: `${req.body.subject}`,
+    html: htmlContent,
+  };
+
+  mail.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      res.status(201).send(info.response);
+      console.log("Email sent: " + info.response);
+    }
+  });
+});
+
+
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
       new Role({
-        name: "user"
-      }).save(err => {
+        name: "user",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -100,8 +164,8 @@ function initial() {
       });
 
       new Role({
-        name: "moderator"
-      }).save(err => {
+        name: "moderator",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -110,8 +174,8 @@ function initial() {
       });
 
       new Role({
-        name: "admin"
-      }).save(err => {
+        name: "admin",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }

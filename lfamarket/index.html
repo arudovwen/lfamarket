@@ -35,6 +35,17 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    #error{
+   display:none;
+    }
+    #sent{
+      display:none;
+    }
+    #loading{
+      display:none;
+    }
+  </style>
 </head>
 
 <body>
@@ -57,11 +68,10 @@
               <li><a href="#portfolio">Education</a></li>
               <li><a href="#team">Partnership</a></li>
               <li><a href="./login.html">Login</a></li>
-              <li class="drop-down"><a href="">Client Zone</a>
+              <li class="drop-down">Client Zone
                 <ul>
                   <li><a href="./register.html">Register</a></li>
-                  <li><a href="./login.html">Login</a></li>
-                  <li><a href="#"> </a>Partnership</li>
+                  <li><a href="./login.html">Login</a></li>                
                   <li><a href="#"><a>Sponsorship</li>
                 </ul>
               </li>
@@ -730,31 +740,31 @@
         </div>
 
         <div class="form">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form  id="form" >
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" name="name" class="form-control" id="fullname" required placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validate"></div>
               </div>
               <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <input type="email" class="form-control" name="email" id="email" required placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                 <div class="validate"></div>
               </div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input type="text" class="form-control" name="subject" id="subject" required placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               <div class="validate"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-              <div class="validate"></div>
+              <textarea class="form-control" id="message" name="message" required rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+            
             </div>
             <div class="mb-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
+              <div class="loading" id="loading">Loading</div>
+              <div class="error-message" id="error"></div>
+              <div class="sent-message" id="sent">Your message has been sent. Thank you!</div>
             </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            <div class="text-center"><button type="submit" class="btn btn-dark">Send Message</button></div>
           </form>
         </div>
 
@@ -822,6 +832,7 @@
       <div class="copyright">
         &copy;  Copyright 2020 <strong> Lfamarkets</strong>. All Rights Reserved
       </div>
+      
       <div class="credits">
         <!--
         All the links in the footer should remain intact.
@@ -839,6 +850,36 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- Vendor JS Files -->
+  <script >
+ form.onsubmit = async (e) => {
+    
+  e.preventDefault()
+  mail()
+
+}
+ function mail() {
+   loading.style.display = 'block'
+  var data = {
+    name:fullname.value,
+    email:email.value,
+    subject:subject.value,
+    message:message.value
+  }
+    axios.post('https://lfamarket-api.herokuapp.com/api/send-mail',data).then(res=>{
+      if (res.status==201) {
+        loading.style.display = 'none'
+        sent.style.display = 'block'
+      }else{
+        error.style.display = 'block'
+        loading.style.display = 'none'
+      }
+    })
+
+ }
+  
+
+  </script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>

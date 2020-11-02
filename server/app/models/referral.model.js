@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const Referral = mongoose.model(
     "Referral", new mongoose.Schema({
         username:String,
-        referral: [],
+        referral:String,
+        amount: String
       
     }, 
     { timestamps: true })

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Business Management System Login</title>
-    <script src="../assets/js/admin-auth.js"></script>
+    <!-- <script src="../assets/js/admin-auth.js"></script> -->
     <!-- Bootstrap -->
     <link
       href="../assets/vendor/bootstrap/css/bootstrap.min.css"
@@ -117,7 +117,7 @@
               typeAdmin.name = res.data.name;
               localStorage.setItem("typeAdmin", JSON.stringify(typeAdmin));
 
-              window.location.href="/lfamarket/admin/home.html"
+              window.location.href="/admin/home.html"
             }
           }).catch(err=>{
             console.log(err.response.data.message);

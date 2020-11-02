@@ -19,7 +19,7 @@ exports.signup = (req, res) => {
     password: bcrypt.hashSync(req.body.password, 8),
   });
 
-  
+ 
 
   user.save((err, user) => {
     if (err) {
@@ -116,6 +116,8 @@ exports.signin = (req, res) => {
         email: user.email,
         roles: authorities,
         accessToken: token,
+        firstname:user.firstname,
+        lastname:user.lastname,
         name: `${user.firstname} ${user.lastname}`,
       });
     });
@@ -129,3 +131,13 @@ exports.getUserinfo = (req, res) => {
     
   });
 };
+
+exports.getUsers = (req,res) => {
+  User.find().exec((err,data)=>{
+   if (err) {
+     
+   }else{
+     res.status(200).send(data);
+   }
+  })
+}
