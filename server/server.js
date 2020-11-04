@@ -60,18 +60,24 @@ app.post("/api/send-proof", (req, res) => {
 
   let htmlContent = `
               
-                <p>Hi,</p>
+                <p>Hello Admin,</p>
                 <p>${req.body.name} contacted with the following Details</p>
                 <br/>
                 <p>Email: ${req.body.email}</p>
                 <p>Username: ${req.body.username}</p>
                 <p> Name: ${req.body.name}</p>
-                <p>Payment proof: ${req.body.url}</p>`;
+               `
 
   var mailOptions = {
     from: `${req.body.name} <${req.body.email}>`,
-    to: "payment@lfamarket.co.zam",
+    to: "payment@lfamarket.co.za",
     subject: "Payment Proof",
+    attachments:[
+      {   // use URL as an attachment
+        filename: 'proof.jpg',
+        path: `${req.body.url}`
+    },
+  ],
     html: htmlContent,
   };
 
@@ -93,6 +99,7 @@ app.post("/api/send-proof", (req, res) => {
 
 
 app.post("/api/send-document", (req, res) => {
+console.log("req", req)
   let htmlContent = `
               
                 <p>Hi,</p>
@@ -101,13 +108,19 @@ app.post("/api/send-document", (req, res) => {
                 <p>Email: ${req.body.email}</p>
                 <p>Username: ${req.body.username}</p>
                 <p> Name: ${req.body.name}</p>
-                <p>Document: ${req.body.url}</p>`;
+              `
 
   var mailOptions = {
     from: `${req.body.name} <${req.body.email}>`,
     to: "admin@lfamarket.co.za",
     subject: "Contract Form",
     html: htmlContent,
+    attachments:[
+      {   // use URL as an attachment
+        filename: 'contract.jpg',
+        path: `${req.body.url}`
+    },
+  ],
   };
 
   mail.sendMail(mailOptions, function (error, info) {
@@ -124,16 +137,16 @@ app.post("/api/send-document", (req, res) => {
 
 
 app.post("/api/send-mail", (req, res) => {
+
   let htmlContent = `
               
-                <p>Hi,</p>
                 <p>${req.body.name} contacted with the following Details</p>
                 <p>Email: ${req.body.email}</p>
                 <p> Name: ${req.body.name}</p>
                 <p>Message: ${req.body.message}</p>`;
 
   var mailOptions = {
-    from: `<${req.body.email}>`,
+    from: `${req.body.email}`,
     to: "info@lfamarket.co.za",
     subject: `${req.body.subject}`,
     html: htmlContent,

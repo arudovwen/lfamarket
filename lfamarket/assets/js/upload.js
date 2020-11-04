@@ -7,11 +7,10 @@ function handleFileChange(event) {
 function processUpload(file) {
   var progress = document.getElementById('progress');
   var currentValue = document.getElementById('currentValue');
-  var name = document.getElementById('fullname').value;
-  var email = document.getElementById('email').value;
-  var apiKey ="299876354696117"
-  var cloudName="dpe85nxdh";
-  var uploadPreset="polybuckz";
+  
+  var apiKey ="791497429114739"
+  var cloudName="lfamarket";
+  var uploadPreset="huryvx6k";
 
   var formData = new FormData();
   var xhr = new XMLHttpRequest();
@@ -25,7 +24,7 @@ function processUpload(file) {
     if (e.lengthComputable) {
       progress.style.width = `${Math.round((e.loaded / e.total) * 100)}%`;
     
-      console.log("xhr.upload.onprogress -> progress", progress)
+     
     }
   };
   xhr.upload.onloadstart = function (e) {

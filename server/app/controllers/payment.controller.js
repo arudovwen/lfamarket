@@ -98,11 +98,7 @@ function sendInvoice(data) {
     
     let htmlContent = `
     <!DOCTYPE html>
-    <!--
-      Invoice template by invoicebus.com
-      To customize this template consider following this guide https://invoicebus.com/how-to-create-invoice-template/
-      This template is under Invoicebus Template License, see https://invoicebus.com/templates/license/
-    -->
+   
     <html lang="en">
       <head>
         <meta charset="utf-8" />
@@ -304,7 +300,7 @@ function sendInvoice(data) {
     
           #memo {
             padding-top: 50px;
-            margin: 0 10px 0 6px;
+            margin: 0 80px 0 40px;
             border-bottom: 1px solid #ddd;
             height: 115px;
             width:100%;
@@ -325,7 +321,7 @@ function sendInvoice(data) {
             line-height: 1em;
             font-weight: bold;
             font-size: 24px;
-            color: #f8c132;
+            color:#f0f757;
           }
           #memo .company-info span {
             font-size: 11px;
@@ -341,6 +337,7 @@ function sendInvoice(data) {
           #invoice-title-number {
             font-weight: bold;
             margin: 30px 0;
+            
           }
           #invoice-title-number span {
             line-height: 0.88em;
@@ -349,9 +346,9 @@ function sendInvoice(data) {
           }
           #invoice-title-number #title {
             text-transform: capitalize;
-            padding: 0px 2px 0px 60px;
+            padding: 5px 12px 5px 20px;
             font-size: 30px;
-            background: #f8c132;
+            background:#f0f757;
             color: white;
           }
           #invoice-title-number #number {
@@ -407,7 +404,7 @@ function sendInvoice(data) {
             font-weight: bold;
             padding: 5px 8px;
             text-align: right;
-            background: #f8c132;
+            background:#f0f757;
             color: white;
             text-transform: uppercase;
           }
@@ -500,7 +497,7 @@ function sendInvoice(data) {
           #terms .notes {
             min-height: 30px;
             min-width: 50px;
-            color: #f8c132;
+            color:#f0f757;
           }
           #terms .payment-info div {
             margin-bottom: 3px;
@@ -515,9 +512,9 @@ function sendInvoice(data) {
             font-weight: bold;
             line-height: 0.88em;
             float: right;
-            padding: 0px 30px 0px 2px;
+            padding: 5px 30px 5px 20px;
             font-size: 24px;
-            background: #f8c132;
+            background:#f0f757;
             color: white;
           }
     
@@ -538,7 +535,7 @@ function sendInvoice(data) {
         <div id="container">
           <section id="memo">
             <div class="logo">
-              <img data-logo="{company_logo}" />
+              <img src="https://lfamarket.herokuapp.com/assets/img/lfa.jpeg"  alt="LFAMARKETS logo/>
             </div>
     
             <div class="company-info">
@@ -671,9 +668,10 @@ function sendInvoice(data) {
     
     `;
   
+    
   
     var mailOptions = {
-      from: `<payment@lfamarket.co.za>`,
+      from: `payment@lfamarket.co.za`,
       to: `${val.email}`,
       subject: "Lfamarkets Invoice",
       html: htmlContent,
@@ -688,6 +686,8 @@ function sendInvoice(data) {
       }
     });
   });
+
+
 }
 
 exports.updatePayment = (req, res) => {
@@ -968,6 +968,7 @@ exports.getmyplan = (req, res) => {
 
 sendReceipt = (res) => {
   User.findOne({ username: res.username }, (err, val) => {
+   
   let htmlContent = `
   <!DOCTYPE html>
   <!--
@@ -1196,7 +1197,7 @@ sendReceipt = (res) => {
           line-height: 1em;
           font-weight: bold;
           font-size: 22px;
-          color: #f8c132;
+          color:#f0f757;
         }
         #memo .company-info span {
           font-size: 11px;
@@ -1220,9 +1221,9 @@ sendReceipt = (res) => {
         }
         #invoice-title-number #title {
           text-transform: capitalize;
-          padding: 0px 2px 0px 60px;
+          padding: 5px 12px 5px 20px;
           font-size: 30px;
-          background: #f8c132;
+          background:#f0f757;
           color: white;
         }
         #invoice-title-number #number {
@@ -1278,7 +1279,7 @@ sendReceipt = (res) => {
           font-weight: bold;
           padding: 5px 8px;
           text-align: right;
-          background: #f8c132;
+          background:#f0f757;
           color: white;
           text-transform: uppercase;
         }
@@ -1371,7 +1372,7 @@ sendReceipt = (res) => {
         #terms .notes {
           min-height: 30px;
           min-width: 50px;
-          color: #f8c132;
+          color:#f0f757;
         }
         #terms .payment-info div {
           margin-bottom: 3px;
@@ -1386,9 +1387,9 @@ sendReceipt = (res) => {
           font-weight: bold;
           line-height: 0.88em;
           float: right;
-          padding: 0px 30px 0px 2px;
+          padding: 5px 30px 5px 20px;
           font-size: 24px;
-          background: #f8c132;
+          background:#f0f757;
           color: white;
         }
   
@@ -1409,7 +1410,7 @@ sendReceipt = (res) => {
       <div id="container">
         <section id="memo">
           <div class="logo">
-            <img data-logo="{company_logo}" />
+            <img src="https://lfamarket.herokuapp.com/assets/img/lfa.jpeg"  alt="LFAMARKETS logo/>
           </div>
   
           <div class="company-info">
@@ -1534,7 +1535,7 @@ sendReceipt = (res) => {
  
 
   var mailOptions = {
-    from: `LFAMARKET `,
+    from: `payment@lfamarket.co.za`,
     to: `${val.email}`,
     subject: "Payment Receipt",
     html: htmlContent,

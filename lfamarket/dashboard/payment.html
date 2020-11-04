@@ -38,7 +38,7 @@
      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -114,10 +114,10 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" onclick="logout()">
-            
-             <i class="fas fa-sign-out-alt    "></i>
-              <span>Logout</span></a>
+          <button style="background-color:#f0f757;" class=" btn" onclick="logout()">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            Logout
+          </button>
           </li>
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -191,19 +191,9 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
+              
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" onclick="logout()">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
+             
               </div>
             </li>
 
@@ -256,25 +246,25 @@
            <div class="form-group">
              <label for="">Full name</label>
              <input type="text"
-               class="form-control" required  id="fullname" aria-describedby="helpId" placeholder="">
+               class="form-control" required  id="full_name" aria-describedby="helpId" placeholder="">
           
            </div>
            <div class="form-group">
             <label for="">Username</label>
             <input type="text"
-              class="form-control" required name="username" id="username" aria-describedby="helpId" placeholder="">
+              class="form-control" required name="user-name" id="user_name" aria-describedby="helpId" placeholder="">
          
           </div>
            <div class="form-group">
             <label for="">Email</label>
             <input type="email"
-              class="form-control" required name="email" id="email" aria-describedby="helpId" placeholder="">
+              class="form-control" required name="email" id="_email" aria-describedby="helpId" placeholder="">
          
           </div>
 
         <div class="form-group">
           <label for="">Proof of Payment</label>
-          <input type="file"  class="form-control-file" onchange="handleFileChange(event)" name="" id="proof" placeholder="" aria-describedby="fileHelpId">
+          <input type="file" required  class="form-control-file" onchange="handleFileChange(event)" name="" id="proof" placeholder="" aria-describedby="fileHelpId">
           <div id="url"> </div>
           <div class="mt-2" id="currentValue"></div>
           <div class="progress mt-2" >
@@ -331,27 +321,24 @@
                     </div>
                   </div>
                 </div>
-    
-                <!-- Investment period (Monthly) Card Example -->
+
+
                 <div class="col-xl-4 col-md-6 mb-4">
                   <div class="card border-left-info shadow h-100 py-2">
-                    <div class="card-body">
-                      <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
+                    <div class="card-body h-100">
+                      <div class="row no-gutters align-items-center h-100">
+                        <div class="col mr-2 h-100">
                           <div class="text-xs font-weight-bold text-info text-uppercase mb-5">Via Google pay</div>
-                          <div class="row no-gutters justify-content-center align-items-center">
-                            <div class="col-auto">
-                              <div class="h5 mb-0 font-weight-bold text-gray-800 h-100 d-flex justify-content-center align-items-center text-gray-800">Not yet available</div>
-                            </div>
-                            
-                          </div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800 h-100 d-flex justify-content-center align-items-center text-gray-800">Not yet available</div>
                         </div>
-                      
+                       
                       </div>
                     </div>
                   </div>
                 </div>
     
+                <!-- Investment period (Monthly) Card Example -->
+            
            
         </div>
 
@@ -391,23 +378,23 @@
     document.getElementById('fullname').innerHTML =user.name
     
     proofform.onsubmit = async (e)=>{
-   
+      console.log("e.srcElemen", full_name.value)
       e.preventDefault()
       var data = {
-        name:e.srcElement[0].value,
-        username:e.srcElement[1].value,
-        email:e.srcElement[2].value,
+        name:full_name.value,  
+        username:user_name.value,
+        email:_email.value,
         url:document.getElementById('url').innerText
       }
     
-      axios.post('http://localhost:8080/api/send-proof', data).then(res=>{
+      axios.post('https://lfamarket-api.herokuapp.com/api/send-proof', data).then(res=>{
         if (res.status==201) {
           saveProof()
           document.getElementById('message').innerText = ' Your message was sent !, Awaiting verification'
           document.getElementById('alert').classList.add('show','alert-success')
-          e.srcElement[0].value = '';
-        e.srcElement[1].value = '';
-        e.srcElement[2].value = ''
+          full_name.value = '';
+        user_name.value = '';
+       _email.value = ''
         document.getElementById('url').innerText = ''
        
         }else{
@@ -422,7 +409,7 @@
         username:user.username,
         url:document.getElementById('url').innerText
       }
-      axios.post('http://localhost:8080/api/save-proof',data).then(res=>{
+      axios.post('https://lfamarket-api.herokuapp.com/api/save-proof',data).then(res=>{
         if(res.status==201){
           document.getElementById('url').innerText = ''
           setTimeout(() => {
@@ -435,10 +422,14 @@
     
   </script>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="../assets/vendor/jquery/jquery.min.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<!-- Core plugin JavaScript-->
+<script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../assets/js/sb-admin-2.min.js"></script>
 
 
 </body>

@@ -57,7 +57,7 @@ function handlePlans(val,data) {
                 if (getTimeDiff(data) >= 15) {
                   div2.innerText = `R${number_format(Math.round((Math.round(capital*percent) * (j/2))/num))}.00`
                 }else{
-                  div2.innerText = 'PENDING'
+                  div2.innerText = 'Pending'
                 }
                 
               }
@@ -66,7 +66,7 @@ function handlePlans(val,data) {
                 if (getTimeDiff(data) >= 30) {
                   div2.innerText = `R${number_format(Math.round((Math.round(capital*percent) * (j/2))/num))}.00`
                 }else{
-                  div2.innerText = 'PENDING'
+                  div2.innerText = 'Pending'
                 }
               }
              

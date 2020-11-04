@@ -1,13 +1,15 @@
 var nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',//smtp.gmail.com  //in place of service use host...
+  host: 'mail.lfamarket.co.za',//smtp.gmail.com 
   secure: true,//true
   port: 465,//465
   auth: {
-    user: 'successahon@gmail.com',
-    pass: 'arudovwen@17'
-  }, tls: {
+    user: 'payment@lfamarket.co.za',
+    pass: 'lfamarket96'
+  }
+  , 
+  tls: {
     rejectUnauthorized: false
   }
 });

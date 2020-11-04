@@ -46,7 +46,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 2px solid yellow;
+        border: 2px solid red;
         position: relative;
       }
       .mybal:first-child::after {
@@ -70,6 +70,52 @@
         width: 99%;
         right: -100%;
       }
+      @media(max-width:425px){
+        .w-75{
+          width:100% !important;
+        }
+        .mybal {
+        padding: 5px;
+        background-color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid red;
+        position: relative;
+      }
+      .mybal:first-child::after {
+        content: "";
+        position: 1bsolute;
+        border-top: 1px solid;
+        width: 99%;
+        right: -100%;
+      }
+      .mybal:nth-child(2)::after {
+        content: "";
+        position: absolute;
+        border-top: 1px solid;
+        width: 99%;
+        right: -100%;
+      }
+      .mybal:nth-child(3)::after {
+        content: "";
+        position: absolute;
+        border-top: 1px solid;
+        width: 99%;
+        right: -100%;
+      }
+      h5, .h5, p{
+        font-size:8px !important;
+        text-transform: capitalize;
+      }
+      p{
+        margin-bottom: 8px;
+      }
+      }
     </style>
   </head>
 
@@ -84,7 +130,7 @@
         <!-- Sidebar - Brand -->
         <a
           class="sidebar-brand d-flex align-items-center justify-content-center"
-          href="index.html"
+          href="home.html"
         >
           <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
@@ -169,10 +215,10 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" onclick="logout()">
-            <i class="fas fa-sign-out-alt"></i>
-            <span>Logout</span></a
-          >
+          <button style="background-color:#f0f757;" class=" btn" onclick="logout()">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            Logout
+          </button>
         </li>
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
@@ -289,14 +335,7 @@
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                   </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
-                  </a>
+                 
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" onclick="logout()">
                     <i
@@ -315,13 +354,13 @@
             <h2>My Balance</h2>
 
             <div
-              class="d-flex justify-content-center align-items-center h-100 w-100 p-4 flex-column"
+              class="d-flex justify-content-center align-items-center h-100 w-100 p-md-4 p-0 flex-column"
             >
               <div class="w-75"  id="main">
                
                
               </div>
-              <div class="text-center p-4 mt-5">
+              <div class="text-center p-md-4 p-0 mt-5">
                 <div class="mb-3">Your balance: <span id="balance">R0,00</span></div>
                 <button type="button" class="btn btn-primary" id="withdraw">
                   Withdraw

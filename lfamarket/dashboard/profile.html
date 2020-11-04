@@ -40,7 +40,7 @@
         <!-- Sidebar - Brand -->
         <a
           class="sidebar-brand d-flex align-items-center justify-content-center"
-          href="index.html"
+          href="home.html"
         >
           <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
@@ -126,10 +126,10 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" onclick="logout()">
-            <i class="fas fa-sign-out-alt"></i>
-            <span>Logout</span></a
-          >
+          <button style="background-color:#f0f757;" class=" btn" onclick="logout()">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            Logout
+          </button>
         </li>
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
@@ -226,21 +226,9 @@
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                   </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
-                  </a>
+                 
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" onclick="logout()">
-                    <i
-                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
-                    ></i>
-                    Logout
-                  </a>
+                 
                 </div>
               </li>
             </ul>
@@ -257,7 +245,7 @@
               <div class="container-fluid">
                 <!-- Brand -->
                 <a
-                  class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
+                  class="h4 mb-0 text-grey text-uppercase d-none d-lg-inline-block"
                   href="https://www.creative-tim.com/product/argon-dashboard"
                   target="_blank"
                   >User profile</a
@@ -301,7 +289,7 @@
                         </span>
                         <div class="media-body ml-2 d-none d-lg-block">
                           <div
-                            class="mb-0 text-sm font-weight-bold fullname"
+                            class="mb-0 text-sm font-weight-bold fullname text-gray-700"
                           style="text-transform:capitalize"
                           >
                             Jessica Jones
@@ -332,10 +320,7 @@
                         <span>Support</span>
                       </a>
                       <div class="dropdown-divider"></div>
-                      <a href="#!" class="dropdown-item">
-                        <i class="ni ni-user-run"></i>
-                        <span>Logout</span>
-                      </a>
+                    
                     </div>
                   </li>
                 </ul>
@@ -346,9 +331,10 @@
               class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
               style="
                 min-height: 600px;
-                background-image: url(https://raw.githack.com/creativetimofficial/argon-dashboard/master/assets/img/theme/profile-cover.jpg);
-                background-size: cover;
+                background-image: url('../assets/img/lfa.jpeg');
+                background-size: contain;
                 background-position: center top;
+                background-repeat: no-repeat;
               "
             >
               <!-- Mask -->
@@ -358,11 +344,11 @@
                 <div class="row">
                   <div class="col-lg-7 col-md-10">
                     <h1
-                      class="display-2 text-white"
+                      class="display-2 text-grey"
                       style="text-transform: capitalize"
                       id="username"
                     ></h1>
-                    <p class="text-white mt-0 mb-5">
+                    <p class="text-grey mt-0 mb-5">
                     
                     </p>
                     <!-- <a href="#!" class="btn btn-info">Edit profile</a> -->
