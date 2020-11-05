@@ -801,14 +801,32 @@ exports.saveProof = (req, res) => {
         earning: null,
         status: "inactive",
       });
-      proof.save((err, data) => {
+      Proof.findOne({ investment_id: data._id}).exec((err,va)=>{
         if (err) {
-          res.status(500).send({ message: err });
-          return;
-        } else {
-          res.status(201).send(data);
+          
+        }else{
+          if (va) {
+            Proof.updateOne({ investment_id: data._id},{url: req.body.url}).exec((err,v)=>{
+              if (err) {
+                res.status(500).send({ message: err });
+                return;
+              } else {
+                res.status(201).send(data);
+              }
+            })
+          }else{
+            proof.save((err, data) => {
+              if (err) {
+                res.status(500).send({ message: err });
+                return;
+              } else {
+                res.status(201).send(data);
+              }
+            });
+          }
         }
-      });
+      })
+    
     }
   });
 };

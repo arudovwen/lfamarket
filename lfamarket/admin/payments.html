@@ -255,10 +255,11 @@
                         <th class="text-center">Capital</th>
                         <th class="text-center">Earnings</th>
                         <th class="text-center">Status</th>
-                        <th class="text-center">Proof of payment</th>
+                        <th class="text-center">Proof </th>
                         <th class="text-center">Payment status</th>
-                        <th class="text-center"></th>
-                        <th class="text-center"></th>
+                        <th class="text-center">Payment</th>
+                        <th class="text-center">Verification</th>
+                        <th class="text-center">Date</th>
                       </tr>
                     </thead>
                     <tbody id="tbody"></tbody>
@@ -403,6 +404,7 @@
               var cell7 = row.insertCell(6);
               var cell8 = row.insertCell(7);
               var cell9 = row.insertCell(8);
+              var cell10 = row.insertCell(9);
 
               cell4.setAttribute("id", `earning${index}`);
               cell5.setAttribute("id", `stat${index}`);
@@ -419,6 +421,7 @@
               
               cell1.classList.add("toCaps");
               cell2.classList.add("toCaps");
+              cell10.innerHTML = new Date(item.createdAt).toLocaleDateString()
             });
           }
         });
